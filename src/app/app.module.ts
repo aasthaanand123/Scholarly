@@ -8,6 +8,8 @@ import { LandingMainComponent } from './landing-main/landing-main.component';
 import { ScholarshipsDisplayComponent } from './scholarships-display/scholarships-display.component';
 import { ScholarshipCardComponent } from './scholarships-display/scholarship-card/scholarship-card.component';
 import { FooterComponent } from './footer/footer.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FooterComponent } from './footer/footer.component';
     LandingMainComponent,
     ScholarshipsDisplayComponent,
     ScholarshipCardComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

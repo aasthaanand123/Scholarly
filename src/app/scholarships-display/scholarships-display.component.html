@@ -1,12 +1,14 @@
-<div class="ps-4 mt-3">
-  <div class="ps-4 comp-heading">Popular Scholarships on Scholarly</div>
-</div>
-<div class="p-4 pt-0">
-  <div class="d-flex flex-row flex-wrap">
-    <app-scholarship-card
-      *ngFor="let scholarship of scholarships; let i = index"
-      [scholarship]="scholarship"
-      [index]="i + 1"
-    ></app-scholarship-card>
+<div class="pb-4 pt-4">
+  <div class="ps-4 mt-3">
+    <div class="ps-4 comp-heading">Popular Scholarships on Scholarly</div>
+  </div>
+  <div class="p-4 pt-0">
+    <div class="d-flex flex-row flex-wrap">
+      <app-scholarship-card
+        *ngFor="let scholarship of scholarships; let i = index"
+        [scholarship]="scholarship"
+        [index]="i + 1"
+      ></app-scholarship-card>
+    </div>
   </div>
 </div>

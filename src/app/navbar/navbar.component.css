@@ -1,6 +1,15 @@
 .custom-list {
   list-style-type: none;
 }
+.custom-list li a {
+  text-decoration: none;
+}
+.custom-list li a.color-white {
+  color: white;
+}
+.custom-list li a.color-black {
+  color: black;
+}
 .w-10 {
   width: 10%;
 }
@@ -18,6 +27,8 @@
 .nav-logo {
   font-weight: 600;
   font-size: 20px;
+  text-decoration: none;
+  color: black;
 }
 .shadow-bottom {
   border-bottom: 1px solid #cccccc0c;
