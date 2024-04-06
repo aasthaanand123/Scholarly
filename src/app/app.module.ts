@@ -10,6 +10,9 @@ import { ScholarshipCardComponent } from './scholarships-display/scholarship-car
 import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ScholarshipsComponent } from './scholarships/scholarships.component';
+import { FilterBoxComponent } from './scholarships/filter-box/filter-box.component';
+import { ScholarshipDetailCardComponent } from './scholarships/scholarship-detail-card/scholarship-detail-card.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ScholarshipCardComponent,
     FooterComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ScholarshipsComponent,
+    FilterBoxComponent,
+    ScholarshipDetailCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
