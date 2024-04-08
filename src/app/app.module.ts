@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -13,7 +13,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ScholarshipsComponent } from './scholarships/scholarships.component';
 import { FilterBoxComponent } from './scholarships/filter-box/filter-box.component';
 import { ScholarshipDetailCardComponent } from './scholarships/scholarship-detail-card/scholarship-detail-card.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +28,14 @@ import { ScholarshipDetailCardComponent } from './scholarships/scholarship-detai
     ScholarshipsComponent,
     FilterBoxComponent,
     ScholarshipDetailCardComponent,
+    UserDashboardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
