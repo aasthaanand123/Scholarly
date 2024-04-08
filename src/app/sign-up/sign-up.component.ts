@@ -34,9 +34,9 @@ export class SignUpComponent {
   onSubmit() {
     this.BackendService.signUp(this.signUpForm.value).subscribe({
       next: (response) => {
-        console.log('Signup successful:', response);
+        console.log('Signup successful');
         this.signUpForm.reset();
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/sign-in']);
       },
       error: (error) => {
         console.error('Signup failed:', error);
