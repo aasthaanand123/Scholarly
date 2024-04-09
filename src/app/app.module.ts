@@ -15,6 +15,7 @@ import { FilterBoxComponent } from './scholarships/filter-box/filter-box.compone
 import { ScholarshipDetailCardComponent } from './scholarships/scholarship-detail-card/scholarship-detail-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { NavbarCustomComponent } from './navbar-custom/navbar-custom.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     FilterBoxComponent,
     ScholarshipDetailCardComponent,
     UserDashboardComponent,
+    NavbarCustomComponent,
   ],
   imports: [
     BrowserModule,

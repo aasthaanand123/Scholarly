@@ -7,11 +7,11 @@ import { BackendServiceService } from '../backend-service.service';
 })
 export class UserDashboardComponent implements OnInit {
   constructor(private backendService: BackendServiceService) {}
-  user_data = ''; //show on dashboard
+  user_data: any;
   ngOnInit(): void {
     this.backendService.getUserData().subscribe({
       next: (response) => {
-        this.user_data = response;
+        this.user_data = response.data;
       },
       error: (err) => {
         console.log(err);

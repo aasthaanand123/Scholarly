@@ -1,2 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="!signed_in"></app-navbar>
+<app-navbar-custom *ngIf="signed_in"></app-navbar-custom>
+
 <router-outlet></router-outlet>

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class BackendServiceService {
   constructor(private http: HttpClient) {}
+  signed_in: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   url_template = 'http://localhost:3000/';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
@@ -36,5 +37,15 @@ export class BackendServiceService {
         headers: header_token,
       }
     );
+  }
+  updateSignInStatus(): void {
+    let token = localStorage.getItem('jwtToken');
+    if (token) this.signed_in.next(true);
+    else this.signed_in.next(false);
+  }
+
+  logout() {
+    localStorage.removeItem('jwtToken');
+    this.updateSignInStatus();
   }
 }

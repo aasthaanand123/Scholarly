@@ -40,15 +40,16 @@
         </div>
       </ul>
     </div>
-
-    <li><a routerLink="/sign-up" class="color-black">Get Started</a></li>
+    <!-- demo of the website in get started -->
+    <li><a class="color-black">Get Started</a></li>
   </ul>
   <ul
-    class="custom-list d-flex justify-content-between ps-0 w-10 align-items-center mb-0"
+    class="custom-list d-flex justify-content-between ps-0 w-12 align-items-center mb-0"
   >
-    <li><a routerLink="/sign-in" class="color-black">Sign In</a></li>
+    <li><a class="color-black" routerLink="/dashboard">My Profile</a></li>
     <li class="custom-btn">
-      <a routerLink="/sign-up" class="color-white">Sign Up</a>
+      <a class="color-white" (click)="loggingOut()">Log Out</a>
     </li>
   </ul>
 </nav>
+<!-- search bar for searching scholarships -->
