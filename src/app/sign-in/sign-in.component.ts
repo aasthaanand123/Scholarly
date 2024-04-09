@@ -24,7 +24,7 @@ export class SignInComponent {
       next: (response) => {
         console.log('Sign In successful!');
         this.signInForm.reset();
-        localStorage.setItem('jwtToken', response.token);
+        // localStorage.setItem('jwtToken', response.token);
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {
