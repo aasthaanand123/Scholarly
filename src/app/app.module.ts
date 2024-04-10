@@ -16,6 +16,10 @@ import { ScholarshipDetailCardComponent } from './scholarships/scholarship-detai
 import { HttpClientModule } from '@angular/common/http';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarCustomComponent } from './navbar-custom/navbar-custom.component';
+import { LeftOptionsComponent } from './user-dashboard/left-options/left-options.component';
+import { StatusCardComponent } from './user-dashboard/status-card/status-card.component';
+import { AppliedScholarshipListComponent } from './user-dashboard/applied-scholarship-list/applied-scholarship-list.component';
+import { ProfileCardComponent } from './user-dashboard/profile-card/profile-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +35,10 @@ import { NavbarCustomComponent } from './navbar-custom/navbar-custom.component';
     ScholarshipDetailCardComponent,
     UserDashboardComponent,
     NavbarCustomComponent,
+    LeftOptionsComponent,
+    StatusCardComponent,
+    AppliedScholarshipListComponent,
+    ProfileCardComponent,
   ],
   imports: [
     BrowserModule,
