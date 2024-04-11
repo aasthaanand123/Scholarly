@@ -20,6 +20,8 @@ import { LeftOptionsComponent } from './user-dashboard/left-options/left-options
 import { StatusCardComponent } from './user-dashboard/status-card/status-card.component';
 import { AppliedScholarshipListComponent } from './user-dashboard/applied-scholarship-list/applied-scholarship-list.component';
 import { ProfileCardComponent } from './user-dashboard/profile-card/profile-card.component';
+import { NotificationCardComponent } from './user-dashboard/notification-card/notification-card.component';
+import { IndividualNotificationComponent } from './user-dashboard/notification-card/individual-notification/individual-notification.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,8 @@ import { ProfileCardComponent } from './user-dashboard/profile-card/profile-card
     StatusCardComponent,
     AppliedScholarshipListComponent,
     ProfileCardComponent,
+    NotificationCardComponent,
+    IndividualNotificationComponent,
   ],
   imports: [
     BrowserModule,

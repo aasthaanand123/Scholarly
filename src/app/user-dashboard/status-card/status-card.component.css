@@ -9,6 +9,6 @@
   color: black;
 }
 .bg-box {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.122);
   background-color: rgba(128, 128, 128, 0.091);
 }
