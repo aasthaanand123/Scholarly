@@ -48,4 +48,21 @@ export class BackendServiceService {
     localStorage.removeItem('jwtToken');
     this.updateSignInStatus();
   }
+
+  update_profile(data: any): Observable<any> {
+    //send this data to backend and update profile
+    let token = localStorage.getItem('jwtToken');
+    if (!token) {
+      throw new Error('Jwt token not found!');
+    }
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + token,
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(
+      this.url_template + 'update_user-info',
+      JSON.stringify(data),
+      { headers: headers }
+    );
+  }
 }

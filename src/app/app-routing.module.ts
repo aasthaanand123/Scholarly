@@ -5,12 +5,14 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingMainComponent } from './landing-main/landing-main.component';
 import { ScholarshipsComponent } from './scholarships/scholarships.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 const routes: Routes = [
   { path: '', component: LandingMainComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'all-scholarships', component: ScholarshipsComponent },
   { path: 'dashboard', component: UserDashboardComponent },
+  { path: 'update-profile', component: UpdateProfileComponent },
 ];
 
 @NgModule({
