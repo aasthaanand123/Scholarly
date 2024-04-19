@@ -7,6 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class BackendServiceService {
   constructor(private http: HttpClient) {}
   signed_in: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  scholarships: BehaviorSubject<any> = new BehaviorSubject<any>('');
   url_template = 'http://localhost:3000/';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
@@ -64,5 +65,16 @@ export class BackendServiceService {
       JSON.stringify(data),
       { headers: headers }
     );
+  }
+
+  getScholarshipData(data: any): Observable<any> {
+    return this.http.post(
+      this.url_template + 'all-scholarships',
+      JSON.stringify(data),
+      { headers: this.headers }
+    );
+  }
+  updateScholarshipData(data: any) {
+    this.scholarships.next(data);
   }
 }

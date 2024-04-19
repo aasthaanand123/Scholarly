@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { BackendServiceService } from '../backend-service.service';
 @Component({
   selector: 'app-scholarships',
   templateUrl: './scholarships.component.html',
   styleUrls: ['./scholarships.component.css'],
 })
-export class ScholarshipsComponent {
+export class ScholarshipsComponent implements OnInit {
+  constructor(private backendservice: BackendServiceService) {}
   scholarships: [] = [];
+  // subscribe to the scholarships variable in the backend service
+  ngOnInit(): void {
+    this.backendservice.scholarships.subscribe({
+      next: (data: any) => {
+        this.scholarships = data;
+        console.log(this.scholarships);
+      },
+    });
+  }
 }

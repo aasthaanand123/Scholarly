@@ -1,11 +1,10 @@
 <div class="d-flex flex-row w-100">
   <div class="scholarships d-flex flex-column align-items-center w-75">
     <div class="w-100">
-      <app-scholarship-detail-card></app-scholarship-detail-card>
-      <app-scholarship-detail-card></app-scholarship-detail-card>
-      <app-scholarship-detail-card></app-scholarship-detail-card>
-      <app-scholarship-detail-card></app-scholarship-detail-card>
-      <app-scholarship-detail-card></app-scholarship-detail-card>
+      <app-scholarship-detail-card
+        *ngFor="let scholarship of scholarships"
+        [scholarshipData]="scholarship"
+      ></app-scholarship-detail-card>
     </div>
   </div>
   <div class="filter-card">
