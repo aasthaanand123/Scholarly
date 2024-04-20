@@ -9,8 +9,7 @@ import { BackendServiceService } from './backend-service.service';
 export class AppComponent implements OnInit {
   constructor(private backendservice: BackendServiceService) {}
   title = 'scholarly';
-  url = 'https://scholarshipforme.com/scholarships';
-  field = '.resume-item';
+  url = 'https://scholarshipforme.com/scholarships?'; //add for page
   scholarships = [];
   signed_in = false;
   ngOnInit(): void {
@@ -20,17 +19,15 @@ export class AppComponent implements OnInit {
         this.signed_in = isSignedIn;
       },
     });
-    this.backendservice
-      .getScholarshipData({ url: this.url, field: this.field })
-      .subscribe({
-        next: (response) => {
-          this.scholarships = response;
-          console.log(this.scholarships);
-          this.backendservice.updateScholarshipData(this.scholarships);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+    this.backendservice.getScholarshipData({ url: this.url }).subscribe({
+      next: (response) => {
+        this.scholarships = response;
+        console.log(this.scholarships);
+        this.backendservice.updateScholarshipData(this.scholarships);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

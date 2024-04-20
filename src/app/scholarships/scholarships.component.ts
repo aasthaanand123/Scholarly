@@ -13,7 +13,6 @@ export class ScholarshipsComponent implements OnInit {
     this.backendservice.scholarships.subscribe({
       next: (data: any) => {
         this.scholarships = data;
-        console.log(this.scholarships);
       },
     });
   }

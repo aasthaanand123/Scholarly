@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class BackendServiceService {
   constructor(private http: HttpClient) {}
   signed_in: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  scholarships: BehaviorSubject<any> = new BehaviorSubject<any>('');
+  scholarships: BehaviorSubject<[]> = new BehaviorSubject<[]>([]);
   url_template = 'http://localhost:3000/';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 

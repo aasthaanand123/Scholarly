@@ -23,6 +23,7 @@ import { ProfileCardComponent } from './user-dashboard/profile-card/profile-card
 import { NotificationCardComponent } from './user-dashboard/notification-card/notification-card.component';
 import { IndividualNotificationComponent } from './user-dashboard/notification-card/individual-notification/individual-notification.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { IndividualScholarshipDetailsComponent } from './scholarships/individual-scholarship-details/individual-scholarship-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     NotificationCardComponent,
     IndividualNotificationComponent,
     UpdateProfileComponent,
+    IndividualScholarshipDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,28 @@
 <div class="p-4 w-100">
   <div class="d-flex flex-row justify-content-center p-3">
-    <div class="img me-3 w-25"></div>
+    <div
+      class="me-3 w-25 d-flex justify-content-center"
+      *ngIf="scholarshipData && scholarshipData.img_url"
+    >
+      <img [src]="scholarshipData.img_url" class="w-50" />
+    </div>
     <div class="d-flex flex-column w-75" *ngIf="!scholarshipData">
       <div>LOADING...</div>
     </div>
     <div class="d-flex flex-column w-75" *ngIf="scholarshipData">
-      <div class="heading mb-1">{{ scholarshipData }}</div>
+      <div class="heading mb-1" (onClick)="open_data(scholarshipData.heading)">
+        {{ scholarshipData.heading }}
+      </div>
       <div class="d-flex flex-row mb-1">
-        <div class="state p-1"></div>
-        <div class="status ms-2 text-white p-1">Open</div>
+        <div
+          class="status me-2 text-white p-1"
+          *ngFor="let link of scholarshipData.links"
+        >
+          {{ link }}
+        </div>
       </div>
       <div class="description">
-        An opportunity offered to undergraduate and postgraduate students.
+        {{ scholarshipData.content }}
       </div>
     </div>
   </div>
