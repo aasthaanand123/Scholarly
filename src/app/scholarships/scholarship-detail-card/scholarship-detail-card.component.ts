@@ -1,12 +1,16 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { BackendServiceService } from 'src/app/backend-service.service';
 @Component({
   selector: 'app-scholarship-detail-card',
   templateUrl: './scholarship-detail-card.component.html',
   styleUrls: ['./scholarship-detail-card.component.css'],
 })
 export class ScholarshipDetailCardComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private backendservice: BackendServiceService
+  ) {}
   @Input() scholarshipData = {
     heading: '',
     content: '',
@@ -14,7 +18,9 @@ export class ScholarshipDetailCardComponent {
     img_url: '',
   };
   open_data(heading: string) {
-    //send a request to scrape the scholarship information from scholarshipforme.com
-    this.router.navigate(['/individual-data']); //send some data in form of query
+    heading = heading.trim();
+    const data = { heading: heading.toLowerCase().split(' ').join('-') };
+    this.backendservice.getIndividualData(data);
+    this.router.navigate(['/individual-data'], { queryParams: data });
   }
 }

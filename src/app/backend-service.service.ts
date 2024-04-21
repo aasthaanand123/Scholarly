@@ -8,6 +8,7 @@ export class BackendServiceService {
   constructor(private http: HttpClient) {}
   signed_in: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   scholarships: BehaviorSubject<[]> = new BehaviorSubject<[]>([]);
+  scholarship: BehaviorSubject<any> = new BehaviorSubject<any>('');
   url_template = 'http://localhost:3000/';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
@@ -76,5 +77,22 @@ export class BackendServiceService {
   }
   updateScholarshipData(data: any) {
     this.scholarships.next(data);
+  }
+
+  getIndividualData(data: any) {
+    this.http
+      .post(
+        this.url_template + 'individual-scholarship',
+        JSON.stringify(data),
+        { headers: this.headers }
+      )
+      .subscribe({
+        next: (response) => {
+          this.scholarship.next(response);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   }
 }
