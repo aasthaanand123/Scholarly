@@ -19,7 +19,13 @@ export class ScholarshipDetailCardComponent {
   };
   open_data(heading: string) {
     heading = heading.trim();
-    const data = { heading: heading.toLowerCase().split(' ').join('-') };
+    const data = {
+      heading: heading
+        .replace(/[^\w\s-]/g, '')
+        .toLowerCase()
+        .split(' ')
+        .join('-'),
+    };
     this.backendservice.getIndividualData(data);
     this.router.navigate(['/individual-data'], { queryParams: data });
   }

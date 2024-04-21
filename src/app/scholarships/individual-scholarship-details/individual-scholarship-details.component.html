@@ -1,5 +1,5 @@
 <div
-  class="d-flex justify-content-between p-4"
+  class="d-flex justify-content-between p-4 ms-3"
   style="min-height: 68vh"
   *ngIf="scholarshipData.heading"
 >
@@ -33,7 +33,7 @@
   </div>
   <div class="w-50">
     <div
-      class="heading text-center mt-2"
+      class="heading text-center"
       style="font-weight: 600; font-size: 1.5rem; color: gray"
     >
       Overview
@@ -42,7 +42,24 @@
       <div class="overview w-50 border border-gray p-3" style="color: gray">
         <div *ngFor="let key of scholarshipData.overview">{{ key }}</div>
       </div>
-      <!-- extract official link -->
+      <button
+        class="btn w-50 mt-3"
+        style="font-weight: 600; font-size: 1rem"
+        [class.btn-danger]="!applied"
+        [class.btn-success]="applied"
+        (click)="updateStatus(scholarshipData.heading)"
+      >
+        {{ statusApplied }}
+      </button>
+      <button
+        class="btn w-50 mt-2"
+        style="font-weight: 600; font-size: 1rem"
+        [class.btn-secondary]="!saved"
+        [class.btn-dark]="saved"
+        (click)="updateSaveStatus(scholarshipData.heading)"
+      >
+        {{ SaveStatus }}
+      </button>
     </div>
   </div>
 </div>
