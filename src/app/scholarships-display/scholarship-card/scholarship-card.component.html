@@ -6,14 +6,12 @@
   <div>
     <div class="d-flex flex-column align-items-start">
       <img src="" alt="" />
-      <span class="scholarship-org">{{ scholarship.organisation }}</span>
+      <span class="scholarship-org">{{ scholarship.title }}</span>
     </div>
     <div class="scholarship-name">
-      {{ scholarship.name }}
+      {{ scholarship.status }}
     </div>
     <div class="date-time">
-      <span>{{ scholarship.date | date : "short" }}</span>
-      <span> . </span>
       <span>{{ scholarship.status | titlecase }}</span>
     </div>
   </div>

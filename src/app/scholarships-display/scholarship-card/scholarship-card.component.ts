@@ -7,9 +7,8 @@ import { Scholarship } from 'src/app/Scholarship.interface';
 })
 export class ScholarshipCardComponent {
   @Input() scholarship: Scholarship = {
-    organisation: '',
-    name: '',
-    date: new Date(),
+    title: '',
+    state: '',
     status: '',
   };
   @Input() index: number = 0;

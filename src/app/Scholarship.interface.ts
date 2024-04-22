@@ -1,6 +1,5 @@
 export interface Scholarship {
-  organisation: string;
-  name: string;
-  date: Date;
+  title: string;
+  state: string;
   status: string;
 }

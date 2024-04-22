@@ -5,12 +5,17 @@
   <div class="w-75 d-flex flex-row justify-content-between">
     <div class="w-60">
       <div class="d-flex justify-content-between mt-4">
-        <app-status-card></app-status-card>
-        <app-status-card></app-status-card>
-        <app-status-card></app-status-card>
+        <app-status-card
+          text="Applied"
+          [count]="count_applied"
+        ></app-status-card>
+        <app-status-card text="Saved" [count]="count_saved"></app-status-card>
+        <app-status-card text="Both" [count]="count_both"></app-status-card>
       </div>
       <div class="mt-5">
-        <app-applied-scholarship-list></app-applied-scholarship-list>
+        <app-applied-scholarship-list
+          [user_data]="user_data"
+        ></app-applied-scholarship-list>
         <div class="text-center mt-4">
           <a
             routerLink="/all-scholarships"

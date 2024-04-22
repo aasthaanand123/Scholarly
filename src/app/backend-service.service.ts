@@ -95,4 +95,42 @@ export class BackendServiceService {
         },
       });
   }
+
+  findscholarshipUser(data: any): Observable<any> {
+    let token = localStorage.getItem('jwtToken');
+    if (!token) {
+      throw new Error('Jwt token not found!');
+    }
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + token,
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(
+      this.url_template + 'find-status',
+      JSON.stringify(data),
+      { headers: headers }
+    );
+  }
+
+  changestatus(title: any, status: any) {
+    let data = { title: title, status: status };
+    let token = localStorage.getItem('jwtToken');
+    if (!token) {
+      throw new Error('Jwt token not found!');
+    }
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + token,
+      'Content-Type': 'application/json',
+    });
+    this.http
+      .post(this.url_template + 'change_status', JSON.stringify(data), {
+        headers: headers,
+      })
+      .subscribe({
+        next: () => {},
+        error: (err) => {
+          console.log(err);
+        },
+      });
+  }
 }

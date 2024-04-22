@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Scholarship } from 'src/app/Scholarship.interface';
 @Component({
   selector: 'app-scholarships-display',
@@ -6,42 +6,5 @@ import { Scholarship } from 'src/app/Scholarship.interface';
   styleUrls: ['./scholarships-display.component.css'],
 })
 export class ScholarshipsDisplayComponent {
-  scholarships: Scholarship[] = [
-    {
-      name: 'National overseas scholarship',
-      organisation: 'Ministry of Social Justice and empowerment',
-      date: new Date('2002-09-08'),
-      status: 'open',
-    },
-    {
-      name: 'National overseas scholarship',
-      organisation: 'Ministry of Social Justice and empowerment',
-      date: new Date('2002-09-08'),
-      status: 'open',
-    },
-    {
-      name: 'National overseas scholarship',
-      organisation: 'Ministry of Social Justice and empowerment',
-      date: new Date('2002-09-08'),
-      status: 'open',
-    },
-    {
-      name: 'National overseas scholarship',
-      organisation: 'Ministry of Social Justice and empowerment',
-      date: new Date('2002-09-08'),
-      status: 'open',
-    },
-    {
-      name: 'National overseas scholarship',
-      organisation: 'Ministry of Social Justice and empowerment',
-      date: new Date('2002-09-08'),
-      status: 'open',
-    },
-    {
-      name: 'National overseas scholarship',
-      organisation: 'Ministry of Social Justice and empowerment',
-      date: new Date('2002-09-08'),
-      status: 'open',
-    },
-  ];
+  @Input() popular: any;
 }

@@ -24,6 +24,7 @@ import { NotificationCardComponent } from './user-dashboard/notification-card/no
 import { IndividualNotificationComponent } from './user-dashboard/notification-card/individual-notification/individual-notification.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { IndividualScholarshipDetailsComponent } from './scholarships/individual-scholarship-details/individual-scholarship-details.component';
+import { FormatTitlePipe } from './format-title.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { IndividualScholarshipDetailsComponent } from './scholarships/individual
     IndividualNotificationComponent,
     UpdateProfileComponent,
     IndividualScholarshipDetailsComponent,
+    FormatTitlePipe,
   ],
   imports: [
     BrowserModule,

@@ -37,22 +37,45 @@ export class IndividualScholarshipDetailsComponent implements OnInit {
         this.scholarshipData = data;
       },
     });
-    //get from database, whether applied scholarship or not
-    //get from database, whether saved or not
+    this.backendservice
+      .findscholarshipUser({
+        heading: this.heading,
+      })
+      .subscribe({
+        next: (response: { status: { applied: Boolean; saved: Boolean } }) => {
+          if (response.status.applied == true) {
+            this.applied = true;
+            this.statusApplied = 'Applied';
+          }
+          if (response.status.saved == true) {
+            this.saved = true;
+            this.SaveStatus = 'Saved';
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   }
   backtoScholarships() {
     this.router.navigate(['/all-scholarships']);
   }
   updateStatus(title: any) {
-    //toggle applied and text
     this.applied = !this.applied;
     if (this.statusApplied == 'Not Applied') this.statusApplied = 'Applied';
     else this.statusApplied = 'Not Applied';
-    //save changes in database
+    this.backendservice.changestatus(title, {
+      applied: this.applied,
+      saved: this.saved,
+    });
   }
   updateSaveStatus(title: any) {
     this.saved = !this.saved;
     if (this.SaveStatus == 'Not Saved') this.SaveStatus = 'Saved';
     else this.SaveStatus = 'Not Saved';
+    this.backendservice.changestatus(title, {
+      applied: this.applied,
+      saved: this.saved,
+    });
   }
 }
