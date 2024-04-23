@@ -20,6 +20,7 @@ export class SignInComponent {
     ]),
   });
   OnSubmit() {
+    console.log(this.signInForm.value);
     this.backendService.signIn(this.signInForm.value).subscribe({
       next: (response) => {
         console.log('Sign In successful!');
