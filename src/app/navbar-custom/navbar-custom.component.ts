@@ -12,8 +12,23 @@ export class NavbarCustomComponent {
     private backendservice: BackendServiceService,
     private router: Router
   ) {}
+  searchQuery: String = '';
   loggingOut() {
     this.backendservice.logout();
     this.router.navigate(['/']);
+  }
+  loadIndividual() {
+    let text = this.searchQuery;
+    text = text.trim();
+    const data = {
+      heading: text
+        .replace(/[^\w\s-]/g, '')
+        .toLowerCase()
+        .split(' ')
+        .join('-'),
+    };
+    this.backendservice.getIndividualData(data);
+    this.searchQuery = '';
+    this.router.navigate(['/individual-data'], { queryParams: data });
   }
 }

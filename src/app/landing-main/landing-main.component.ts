@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Scholarship } from '../Scholarship.interface';
+import { BackendServiceService } from '../backend-service.service';
 
 @Component({
   selector: 'app-landing-main',
@@ -8,15 +7,12 @@ import { Scholarship } from '../Scholarship.interface';
   styleUrls: ['./landing-main.component.css'],
 })
 export class LandingMainComponent implements OnInit {
-  constructor(private http: HttpClient) {}
-  popular: any;
+  constructor(private backendservice: BackendServiceService) {}
+  popular: any = '';
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/getPopular').subscribe({
+    this.backendservice.popular.subscribe({
       next: (response) => {
         this.popular = response;
-      },
-      error: (err) => {
-        console.log(err);
       },
     });
   }

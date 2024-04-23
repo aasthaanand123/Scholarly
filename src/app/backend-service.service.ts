@@ -10,6 +10,7 @@ export class BackendServiceService {
   scholarships: BehaviorSubject<[]> = new BehaviorSubject<[]>([]);
   scholarship: BehaviorSubject<any> = new BehaviorSubject<any>('');
   url_template = 'http://localhost:3000/';
+  popular: BehaviorSubject<any> = new BehaviorSubject<any>('');
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   signUp(data: any): Observable<any> {
@@ -132,5 +133,15 @@ export class BackendServiceService {
           console.log(err);
         },
       });
+  }
+  getPopularScholarships(): any {
+    this.http.get('http://localhost:3000/getPopular').subscribe({
+      next: (response) => {
+        this.popular.next(response);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

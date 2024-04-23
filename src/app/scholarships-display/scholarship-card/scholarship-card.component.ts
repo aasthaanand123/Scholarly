@@ -6,7 +6,7 @@ import { Scholarship } from 'src/app/Scholarship.interface';
   styleUrls: ['./scholarship-card.component.css'],
 })
 export class ScholarshipCardComponent {
-  @Input() scholarship: Scholarship = {
+  @Input() scholarship: any = {
     title: '',
     state: '',
     status: '',

@@ -9,7 +9,7 @@ import { BackendServiceService } from './backend-service.service';
 export class AppComponent implements OnInit {
   constructor(private backendservice: BackendServiceService) {}
   title = 'scholarly';
-  url = 'https://scholarshipforme.com/scholarships?'; //add for page
+  url = 'https://scholarshipforme.com/scholarships?';
   scholarships = [];
   signed_in = false;
   ngOnInit(): void {
@@ -29,5 +29,6 @@ export class AppComponent implements OnInit {
         console.log(err);
       },
     });
+    this.backendservice.getPopularScholarships();
   }
 }

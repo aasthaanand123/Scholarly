@@ -6,5 +6,5 @@ import { Scholarship } from 'src/app/Scholarship.interface';
   styleUrls: ['./scholarships-display.component.css'],
 })
 export class ScholarshipsDisplayComponent {
-  @Input() popular: any;
+  @Input() popular: any = '';
 }

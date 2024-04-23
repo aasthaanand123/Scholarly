@@ -7,11 +7,17 @@
     <input
       type="text"
       class="form-control"
-      placeholder="Scholarships, People"
-      aria-label="Scholarships, People"
+      placeholder="Scholarships"
+      aria-label="Scholarships"
       aria-describedby="button-addon2"
+      [(ngModel)]="searchQuery"
     />
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+    <button
+      class="btn btn-outline-secondary"
+      type="click"
+      id="button-addon2"
+      (click)="loadIndividual()"
+    >
       Search
     </button>
   </div>
